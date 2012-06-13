@@ -40,13 +40,13 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\mysql connector\MySql.Data.dll</HintPath>
+      <HintPath>K:\Gabriel\mysql connector\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data.Entity">
-      <HintPath>..\..\..\..\..\mysql connector\MySql.Data.Entity.dll</HintPath>
+      <HintPath>K:\Gabriel\mysql connector\MySql.Data.Entity.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Web">
-      <HintPath>..\..\..\..\..\mysql connector\MySql.Web.dll</HintPath>
+      <HintPath>K:\Gabriel\mysql connector\MySql.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -202,8 +202,10 @@
     <Compile Include="GoalView.aspx.designer.cs">
       <DependentUpon>GoalView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Db_Firebird.cs" />
+    <Compile Include="Model\Data.cs" />
     <Compile Include="Model\Db.cs" />
+    <None Include="Model\Dba.csA" />
+    <Compile Include="Model\Orm.cs" />
     <Compile Include="Model\Validation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
@@ -221,7 +223,9 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\Orm\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />

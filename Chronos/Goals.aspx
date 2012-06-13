@@ -59,7 +59,7 @@
                                         <td>Aprender a nadar.</td>
                                         <td>03/07/2012</td>
                                         <td>Parado
-                                            <br /><sup>Desde: Semana Passada </sup></sup>
+                                            <br /><sup>Desde: Semana Passada </sup>
                                             <br /><span class="add-on"><i class="icon-user"></i> <b>2</b> seguidores </span>
                                             <br /><span class="add-on"><i class="icon-comment"></i> (<b>0</b>) novo(s) comentário(s) </span>
                                         </td>
@@ -71,7 +71,7 @@
                                         <td>Aprender a tocar clarineta.</td>
                                         <td>03/07/2012</td>
                                         <td>Parado
-                                            <br /><sup>Desde: Semana Passada </sup></sup>
+                                            <br /><sup>Desde: Semana Passada </sup>
                                             <br /><span class="add-on"><i class="icon-user"></i> <b>21</b> seguidores </span>
                                             <br /><span class="add-on"><i class="icon-comment"></i> <u>(<b>8</b>) novo(s) comentário(s)</u> </span>
                                         </td>
@@ -119,7 +119,7 @@
                                         <td>03/07/2012</td>
                                                    <td><a href="">@UserXS</a></td>
                                         <td>Finalizado
-                                            <br /><sup>Desde: Semana Passada </sup></sup>
+                                            <br /><sup>Desde: Semana Passada </sup>
                                             <br /><span class="add-on"><i class="icon-user"></i> <b>2</b> seguidores </span>
                                             <br /><span class="add-on"><i class="icon-comment"></i> (<b>0</b>) novo(s) comentário(s) </span>
                                             <br /><span class="add-on" title="10 pessoas dizem que esse modo ajudou."><i class="icon-thumbs-up"></i> <b>10</b> pessoas.</span>
@@ -134,7 +134,7 @@
                                         <td>03/07/2012</td>
                                                    <td><a href="">@UserXY</a></td>
                                         <td>Parado
-                                            <br /><sup>Desde: Semana Passada </sup></sup>
+                                            <br /><sup>Desde: Semana Passada </sup>
                                             <br /><span class="add-on"><i class="icon-user"></i> <b>21</b> seguidores </span>
                                             <br /><span class="add-on"><i class="icon-comment"></i> <u>(<b>8</b>) novo(s) comentário(s)</u> </span>
                                             

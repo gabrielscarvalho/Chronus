@@ -29,3 +29,7 @@ K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\Chronos.dll
 K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\Chronos.pdb
 K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\FirebirdSql.Data.FirebirdClient.pdb
 K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\Chronos.pdb
+C:\Users\Gabriel\Documents\Visual Studio 2010\Projects\Chronos\Chronos\bin\MySql.Data.dll
+C:\Users\Gabriel\Documents\Visual Studio 2010\Projects\Chronos\Chronos\bin\MySql.Data.Entity.dll
+C:\Users\Gabriel\Documents\Visual Studio 2010\Projects\Chronos\Chronos\bin\MySql.Web.dll
+C:\Users\Gabriel\Documents\Visual Studio 2010\Projects\Chronos\Chronos\bin\FirebirdSql.Data.FirebirdClient.pdb
