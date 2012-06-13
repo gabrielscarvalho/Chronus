@@ -15,6 +15,7 @@ namespace Chronos.Model
         protected string dataBase = "chronus";
         protected MySqlConnection conn;
         protected string lastQuery;
+        protected DataTable dataTable = new DataTable();
 
 
         /**
@@ -67,9 +68,6 @@ namespace Chronos.Model
          */
         public DataRow[] select(string sql)
         {
-            
-            
-            DataTable data = new DataTable();
             DataRow[] result;
 
             try
@@ -78,9 +76,9 @@ namespace Chronos.Model
                 MySqlCommand cmd = new MySqlCommand(sql, this.conn);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                
-                da.Fill(data);
-                result = data.Select();
+
+                da.Fill(this.dataTable);
+                result = this.dataTable.Select();
 
                 //Armazenamos a ultima query.
                 this.lastQuery = sql;
@@ -95,6 +93,30 @@ namespace Chronos.Model
             }
 
             return result;
+        }
+
+        /**
+         * Retorna as colunas do ultimo select executado.
+         * @return      array
+         */
+        public string[] __getColumnsLastSelect()
+        {
+        
+            
+            if (this.dataTable != null)
+            {
+                string[] columns = new string[this.dataTable.Columns.Count];
+
+                int atual = 0;
+                foreach (DataColumn column in this.dataTable.Columns)
+                {
+                   columns[atual] =  column.ColumnName;
+                   atual++;
+                }
+                
+                return columns;
+            }
+            throw new Exception("Você precisa executar um select para utilizar esse comando.");
         }
 
 
@@ -193,12 +215,9 @@ namespace Chronos.Model
                 column++;
             }
 
-            sql = "INSERT into " + table + "(" + fieldsList + ") VALUES (" + fieldValues + ");";
+            sql = "INSERT into " + table + " (" + fieldsList + ") VALUES (" + fieldValues + ");";
 
-
-
-
-
+                       
             return this.insert(sql);
         }
 

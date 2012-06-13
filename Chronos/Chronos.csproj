@@ -205,7 +205,8 @@
     <Compile Include="Model\Data.cs" />
     <Compile Include="Model\Db.cs" />
     <None Include="Model\Dba.csA" />
-    <Compile Include="Model\Orm.cs" />
+    <Compile Include="Model\Orm\Core.cs" />
+    <Compile Include="Model\Orm\Usuario.cs" />
     <Compile Include="Model\Validation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
@@ -223,9 +224,7 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\Orm\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
