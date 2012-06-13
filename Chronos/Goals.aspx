@@ -13,7 +13,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<h1>Objetivos.</h1>
+<h1>Objetivos</h1>
 
 
     <ul class="nav nav-tabs" id="goalTabs">

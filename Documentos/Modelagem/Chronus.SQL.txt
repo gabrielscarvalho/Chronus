@@ -1,0 +1,947 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+
+-- -----------------------------------------------------
+
+-- Table `usuario`
+
+-- -----------------------------------------------------
+USE chronus;
+
+DROP TABLE IF EXISTS `usuario` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `usuario` (
+
+  `id` INT NOT NULL AUTO_INCREMENT ,
+
+  `nome` VARCHAR(45) NOT NULL ,
+
+  `sobrenome` VARCHAR(45) NOT NULL ,
+
+  `sexo` CHAR(1) NULL ,
+
+  `nascimento` DATE NULL ,
+
+  `status` CHAR(1) NOT NULL ,
+
+  `email` VARCHAR(100) NOT NULL ,
+
+  `senha` VARCHAR(100) NOT NULL ,
+
+  `criado_em` DATETIME NULL ,
+
+  `alterado_em` TIMESTAMP NULL DEFAULT now() ,
+
+  `foto_perfil` VARCHAR(200) NULL ,
+
+  PRIMARY KEY (`id`) )
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `objetivo`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `objetivo` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `objetivo` (
+
+  `id` INT NOT NULL ,
+
+  `titulo` VARCHAR(80) NULL ,
+
+  `descricao` TEXT NULL ,
+
+  `status` CHAR(1) NULL ,
+
+  `criado_em` DATETIME NULL ,
+
+  `alterado_em` TIMESTAMP NULL DEFAULT now() ,
+
+  `iniciado_em` DATETIME NULL ,
+
+  `concluido_em` DATETIME NULL ,
+
+  `concluido` CHAR(1) NULL ,
+
+  `imagem_objetivo` VARCHAR(200) NULL ,
+
+  `imagem_antes` VARCHAR(200) NULL ,
+
+  `imagem_depois` VARCHAR(200) NULL ,
+
+  PRIMARY KEY (`id`) )
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `grupo_objetivo`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `grupo_objetivo` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `grupo_objetivo` (
+
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,
+
+  `usuario_id` INT NOT NULL ,
+
+  `objetivo_id` INT NOT NULL ,
+
+  `criado_em` DATETIME NULL ,
+
+  `criou_ideia` CHAR(1) NOT NULL DEFAULT 'N' COMMENT 'Esse usuário participou na criação desse objetivo ? é um mentor ou apenas participa?' ,
+
+  `status` CHAR(1) NOT NULL DEFAULT 'A' COMMENT 'A - Ativo, I - Inativo' ,
+
+  PRIMARY KEY (`id`, `usuario_id`, `objetivo_id`) ,
+
+  INDEX `fk_usuario_has_objetivo_objetivo1` (`objetivo_id` ASC) ,
+
+  INDEX `fk_usuario_has_objetivo_usuario` (`usuario_id` ASC) ,
+
+  CONSTRAINT `fk_usuario_has_objetivo_usuario`
+
+    FOREIGN KEY (`usuario_id` )
+
+    REFERENCES `usuario` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_usuario_has_objetivo_objetivo1`
+
+    FOREIGN KEY (`objetivo_id` )
+
+    REFERENCES `objetivo` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `meta`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `meta` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `meta` (
+
+  `id` INT NOT NULL ,
+
+  `executor_id` INT(11) NULL ,
+
+  `meta_pai_id` INT NULL ,
+
+  `objetivo_id` INT NOT NULL ,
+
+  `titulo` VARCHAR(60) NOT NULL ,
+
+  `definicao` VARCHAR(300) NULL ,
+
+  `concluido` CHAR(1) NOT NULL DEFAULT 'N' ,
+
+  `status` CHAR(1) NOT NULL DEFAULT 'A' COMMENT 'A - Ativo, I - Inativo' ,
+
+  `criado_em` DATETIME NULL ,
+
+  `alterado_em` TIMESTAMP NULL DEFAULT now() ,
+
+  `iniciado_em` DATETIME NULL ,
+
+  `iniciar_em` DATETIME NULL ,
+
+  `finalizado_em` DATETIME NULL ,
+
+  `finalizar_em` DATETIME NULL ,
+
+  `meta_repete` CHAR(1) NOT NULL DEFAULT 'N' COMMENT 'Essa meta é repetitiva? S - Sim , N - Não' ,
+
+  `repete_qtd_dia` INT NOT NULL DEFAULT 0 ,
+
+  PRIMARY KEY (`id`, `executor_id`, `meta_pai_id`, `objetivo_id`) ,
+
+  INDEX `fk_meta_meta1` (`meta_pai_id` ASC) ,
+
+  INDEX `fk_meta_objetivo1` (`objetivo_id` ASC) ,
+
+  INDEX `fk_meta_grupo_objetivo1` (`executor_id` ASC) ,
+
+  CONSTRAINT `fk_meta_meta1`
+
+    FOREIGN KEY (`meta_pai_id` )
+
+    REFERENCES `meta` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_meta_objetivo1`
+
+    FOREIGN KEY (`objetivo_id` )
+
+    REFERENCES `objetivo` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_meta_grupo_objetivo1`
+
+    FOREIGN KEY (`executor_id` )
+
+    REFERENCES `grupo_objetivo` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `seguidor_objetivo`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `seguidor_objetivo` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `seguidor_objetivo` (
+
+  `objetivo_id` INT NOT NULL ,
+
+  `usuario_id` INT NOT NULL ,
+
+  `criado_em` TIMESTAMP NULL DEFAULT now() ,
+
+  `notificar_email` CHAR(1) NULL ,
+
+  PRIMARY KEY (`objetivo_id`, `usuario_id`) ,
+
+  INDEX `fk_objetivo_has_usuario_usuario1` (`usuario_id` ASC) ,
+
+  INDEX `fk_objetivo_has_usuario_objetivo1` (`objetivo_id` ASC) ,
+
+  CONSTRAINT `fk_objetivo_has_usuario_objetivo1`
+
+    FOREIGN KEY (`objetivo_id` )
+
+    REFERENCES `objetivo` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_objetivo_has_usuario_usuario1`
+
+    FOREIGN KEY (`usuario_id` )
+
+    REFERENCES `usuario` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `relato`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `relato` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `relato` (
+
+  `id` INT NOT NULL AUTO_INCREMENT ,
+
+  `postador_id` INT(11) NOT NULL ,
+
+  `titulo` VARCHAR(80) NOT NULL ,
+
+  `resumo` VARCHAR(200) NOT NULL ,
+
+  `conteudo` TEXT NOT NULL ,
+
+  `criado_em` DATETIME NULL ,
+
+  `alterado_em` TIMESTAMP NULL DEFAULT now() ,
+
+  `status` CHAR(1) NOT NULL DEFAULT 'A' COMMENT 'A - Ativo, I - Inativo' ,
+
+  `antes_imagem` VARCHAR(250) NULL COMMENT 'Uma imagem de como era antes.' ,
+
+  `depois_imagem` VARCHAR(250) NULL COMMENT 'Uma imagem de como ficou depois' ,
+
+  PRIMARY KEY (`id`, `postador_id`) ,
+
+  INDEX `fk_relato_grupo_objetivo1` (`postador_id` ASC) ,
+
+  CONSTRAINT `fk_relato_grupo_objetivo1`
+
+    FOREIGN KEY (`postador_id` )
+
+    REFERENCES `grupo_objetivo` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `categoria`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `categoria` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `categoria` (
+
+  `id` INT NOT NULL ,
+
+  `categoria_pai_id` INT NULL ,
+
+  `titulo` VARCHAR(45) NOT NULL ,
+
+  `descricao` VARCHAR(300) NULL ,
+
+  `status` CHAR(1) NOT NULL DEFAULT 'A' ,
+
+  `criado_em` DATETIME NULL ,
+
+  `alterado_em` TIMESTAMP NOT NULL DEFAULT now() ,
+
+  `ordem` INT NULL ,
+
+  PRIMARY KEY (`id`, `categoria_pai_id`) ,
+
+  INDEX `fk_categoria_categoria1` (`categoria_pai_id` ASC) ,
+
+  CONSTRAINT `fk_categoria_categoria1`
+
+    FOREIGN KEY (`categoria_pai_id` )
+
+    REFERENCES `categoria` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `categoria_objetivo`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `categoria_objetivo` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `categoria_objetivo` (
+
+  `objetivo_id` INT NOT NULL ,
+
+  `categoria_id` INT NOT NULL ,
+
+  `criado_em` TIMESTAMP NULL DEFAULT now() ,
+
+  PRIMARY KEY (`objetivo_id`, `categoria_id`) ,
+
+  INDEX `fk_objetivo_has_categoria_categoria1` (`categoria_id` ASC) ,
+
+  INDEX `fk_objetivo_has_categoria_objetivo1` (`objetivo_id` ASC) ,
+
+  CONSTRAINT `fk_objetivo_has_categoria_objetivo1`
+
+    FOREIGN KEY (`objetivo_id` )
+
+    REFERENCES `objetivo` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_objetivo_has_categoria_categoria1`
+
+    FOREIGN KEY (`categoria_id` )
+
+    REFERENCES `categoria` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `tipo_comentario`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `tipo_comentario` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `tipo_comentario` (
+
+  `id` INT NOT NULL AUTO_INCREMENT ,
+
+  `tabela` VARCHAR(45) NOT NULL ,
+
+  `descricao` VARCHAR(200) NULL ,
+
+  PRIMARY KEY (`id`) ,
+
+  UNIQUE INDEX `tabela_UNIQUE` (`tabela` ASC) )
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `comentario`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `comentario` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `comentario` (
+
+  `id` INT NOT NULL AUTO_INCREMENT ,
+
+  `objeto_id` INT NOT NULL COMMENT 'Qual o ID da tabela que estamos falando?' ,
+
+  `postador_id` INT NOT NULL ,
+
+  `resposta_id` INT NULL ,
+
+  `tipo_comentario_id` INT NOT NULL ,
+
+  `comentario` VARCHAR(250) NOT NULL ,
+
+  `criado_em` TIMESTAMP NULL DEFAULT now() ,
+
+  `status` CHAR(1) NOT NULL DEFAULT 'A' COMMENT 'A = Ativo, I = Inativo' ,
+
+  PRIMARY KEY (`id`, `postador_id`, `resposta_id`, `tipo_comentario_id`) ,
+
+  INDEX `fk_comentario_tipo_comentario1` (`tipo_comentario_id` ASC) ,
+
+  INDEX `fk_comentario_comentario1` (`resposta_id` ASC) ,
+
+  INDEX `fk_comentario_usuario1` (`postador_id` ASC) ,
+
+  CONSTRAINT `fk_comentario_tipo_comentario1`
+
+    FOREIGN KEY (`tipo_comentario_id` )
+
+    REFERENCES `tipo_comentario` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_comentario_comentario1`
+
+    FOREIGN KEY (`resposta_id` )
+
+    REFERENCES `comentario` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_comentario_usuario1`
+
+    FOREIGN KEY (`postador_id` )
+
+    REFERENCES `usuario` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `usuario_aprova_comentario`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `usuario_aprova_comentario` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `usuario_aprova_comentario` (
+
+  `comentario_id` INT NOT NULL ,
+
+  `usuario_id` INT NOT NULL ,
+
+  `criado_em` TIMESTAMP NOT NULL DEFAULT now() ,
+
+  PRIMARY KEY (`comentario_id`, `usuario_id`) ,
+
+  INDEX `fk_comentario_has_usuario_usuario1` (`usuario_id` ASC) ,
+
+  INDEX `fk_comentario_has_usuario_comentario1` (`comentario_id` ASC) ,
+
+  CONSTRAINT `fk_comentario_has_usuario_comentario1`
+
+    FOREIGN KEY (`comentario_id` )
+
+    REFERENCES `comentario` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_comentario_has_usuario_usuario1`
+
+    FOREIGN KEY (`usuario_id` )
+
+    REFERENCES `usuario` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `tag`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `tag` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `tag` (
+
+  `id` INT NOT NULL ,
+
+  `tag` VARCHAR(45) NULL ,
+
+  `criado_em` TIMESTAMP NULL DEFAULT now() ,
+
+  PRIMARY KEY (`id`) ,
+
+  UNIQUE INDEX `tag_UNIQUE` (`tag` ASC) )
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `tag_objetivo`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `tag_objetivo` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `tag_objetivo` (
+
+  `tag_id` INT NOT NULL ,
+
+  `objetivo_id` INT NOT NULL ,
+
+  `criado_em` TIMESTAMP NULL DEFAULT now() ,
+
+  PRIMARY KEY (`tag_id`, `objetivo_id`) ,
+
+  INDEX `fk_tag_has_objetivo_objetivo1` (`objetivo_id` ASC) ,
+
+  INDEX `fk_tag_has_objetivo_tag1` (`tag_id` ASC) ,
+
+  CONSTRAINT `fk_tag_has_objetivo_tag1`
+
+    FOREIGN KEY (`tag_id` )
+
+    REFERENCES `tag` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_tag_has_objetivo_objetivo1`
+
+    FOREIGN KEY (`objetivo_id` )
+
+    REFERENCES `objetivo` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `empresa`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `empresa` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `empresa` (
+
+  `id` INT NOT NULL ,
+
+  `nome` VARCHAR(45) NULL ,
+
+  `website` VARCHAR(200) NULL ,
+
+  `criado_em` DATETIME NULL ,
+
+  `status` CHAR(1) NULL ,
+
+  `descricao` TEXT NULL ,
+
+  `email` VARCHAR(100) NULL ,
+
+  `senha` VARCHAR(100) NULL ,
+
+  PRIMARY KEY (`id`) )
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `propaganda`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `propaganda` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `propaganda` (
+
+  `id` INT NOT NULL ,
+
+  `empresa_id` INT NOT NULL ,
+
+  `titulo` VARCHAR(45) NOT NULL ,
+
+  `conteudo` TEXT NOT NULL ,
+
+  `link` VARCHAR(200) NULL ,
+
+  `qtd_clique` INT NOT NULL DEFAULT 0 ,
+
+  `criado_em` DATETIME NULL ,
+
+  `iniciar_em_data` CHAR(1) NULL DEFAULT 'N' COMMENT 'Inicia em uma data especifica?' ,
+
+  `data_inicia` DATETIME NULL ,
+
+  `data_finaliza` DATETIME NULL ,
+
+  `status` CHAR(1) NOT NULL DEFAULT 'A' ,
+
+  PRIMARY KEY (`id`, `empresa_id`) ,
+
+  INDEX `fk_propaganda_empresa1` (`empresa_id` ASC) ,
+
+  CONSTRAINT `fk_propaganda_empresa1`
+
+    FOREIGN KEY (`empresa_id` )
+
+    REFERENCES `empresa` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `tag_propaganda`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `tag_propaganda` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `tag_propaganda` (
+
+  `propaganda_id` INT NOT NULL ,
+
+  `tag_id` INT NOT NULL ,
+
+  PRIMARY KEY (`propaganda_id`, `tag_id`) ,
+
+  INDEX `fk_propaganda_has_tag_tag1` (`tag_id` ASC) ,
+
+  INDEX `fk_propaganda_has_tag_propaganda1` (`propaganda_id` ASC) ,
+
+  CONSTRAINT `fk_propaganda_has_tag_propaganda1`
+
+    FOREIGN KEY (`propaganda_id` )
+
+    REFERENCES `propaganda` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_propaganda_has_tag_tag1`
+
+    FOREIGN KEY (`tag_id` )
+
+    REFERENCES `tag` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `administrador`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `administrador` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `administrador` (
+
+  `id` INT NOT NULL ,
+
+  `nome` VARCHAR(80) NOT NULL ,
+
+  `sobrenome` VARCHAR(80) NOT NULL ,
+
+  `status` CHAR(1) NOT NULL DEFAULT 'A' COMMENT 'A - Ativo , I - iNATIVO' ,
+
+  `criado_em` DATETIME NULL ,
+
+  `alterado_em` TIMESTAMP NOT NULL DEFAULT now() ,
+
+  `email` VARCHAR(100) NOT NULL ,
+
+  `senha` VARCHAR(100) NOT NULL ,
+
+  `sexo` CHAR(1) NULL COMMENT 'M = Masculino, F = Feminino' ,
+
+  `nascimento` DATE NULL ,
+
+  PRIMARY KEY (`id`) )
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `circulo`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `circulo` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `circulo` (
+
+  `id` INT NOT NULL ,
+
+  `dono_id` INT NOT NULL ,
+
+  `nome` VARCHAR(100) NULL ,
+
+  `status` CHAR(1) NOT NULL DEFAULT 'A' COMMENT 'A = Ativo , I = Inativo' ,
+
+  `criado_em` TIMESTAMP NOT NULL DEFAULT now() ,
+
+  PRIMARY KEY (`id`, `dono_id`) ,
+
+  INDEX `fk_circulo_usuario1` (`dono_id` ASC) ,
+
+  CONSTRAINT `fk_circulo_usuario1`
+
+    FOREIGN KEY (`dono_id` )
+
+    REFERENCES `usuario` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `circulo_pessoa`
+
+-- -----------------------------------------------------
+
+DROP TABLE IF EXISTS `circulo_pessoa` ;
+
+
+
+CREATE  TABLE IF NOT EXISTS `circulo_pessoa` (
+
+  `usuario_id` INT NOT NULL ,
+
+  `circulo_id` INT NOT NULL ,
+
+  `criado_em` TIMESTAMP NOT NULL DEFAULT now() ,
+
+  PRIMARY KEY (`usuario_id`, `circulo_id`) ,
+
+  INDEX `fk_usuario_has_circulo_circulo1` (`circulo_id` ASC) ,
+
+  INDEX `fk_usuario_has_circulo_usuario1` (`usuario_id` ASC) ,
+
+  CONSTRAINT `fk_usuario_has_circulo_usuario1`
+
+    FOREIGN KEY (`usuario_id` )
+
+    REFERENCES `usuario` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_usuario_has_circulo_circulo1`
+
+    FOREIGN KEY (`circulo_id` )
+
+    REFERENCES `circulo` (`id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+commit;

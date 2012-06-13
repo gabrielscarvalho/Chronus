@@ -3,3 +3,29 @@ c:\users\gabriel\documents\visual studio 2010\Projects\Chronos\Chronos\bin\Chron
 c:\users\gabriel\documents\visual studio 2010\Projects\Chronos\Chronos\obj\Debug\ResolveAssemblyReference.cache
 c:\users\gabriel\documents\visual studio 2010\Projects\Chronos\Chronos\obj\Debug\Chronos.dll
 c:\users\gabriel\documents\visual studio 2010\Projects\Chronos\Chronos\obj\Debug\Chronos.pdb
+F:\Gabriel\Chronos_03_06_Original\Chronos\Chronos\bin\Chronos.dll
+F:\Gabriel\Chronos_03_06_Original\Chronos\Chronos\bin\Chronos.pdb
+F:\Gabriel\Chronos_03_06_Original\Chronos\Chronos\bin\FirebirdSql.Data.FirebirdClient.dll
+F:\Gabriel\Chronos_03_06_Original\Chronos\Chronos\bin\FirebirdSql.Data.UnitTests.dll
+F:\Gabriel\Chronos_03_06_Original\Chronos\Chronos\bin\FirebirdSql.Data.FirebirdClient.pdb
+F:\Gabriel\Chronos_03_06_Original\Chronos\Chronos\obj\Debug\ResolveAssemblyReference.cache
+F:\Gabriel\Chronos_03_06_Original\Chronos\Chronos\obj\Debug\Chronos.dll
+F:\Gabriel\Chronos_03_06_Original\Chronos\Chronos\obj\Debug\Chronos.pdb
+J:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\ResolveAssemblyReference.cache
+J:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\Chronos.dll
+J:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\Chronos.pdb
+J:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\Chronos.dll
+J:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\Chronos.pdb
+J:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\FirebirdSql.Data.FirebirdClient.pdb
+F:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\Chronos.dll
+F:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\Chronos.pdb
+F:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\FirebirdSql.Data.FirebirdClient.pdb
+F:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\ResolveAssemblyReference.cache
+F:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\Chronos.dll
+F:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\Chronos.pdb
+K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\ResolveAssemblyReference.cache
+K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\Chronos.dll
+K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\Chronos.dll
+K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\Chronos.pdb
+K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\FirebirdSql.Data.FirebirdClient.pdb
+K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\Chronos.pdb
