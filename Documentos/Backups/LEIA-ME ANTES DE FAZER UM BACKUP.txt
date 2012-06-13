@@ -1,0 +1,8 @@
+Cada backup realizado, salve com um arquivo .txt explicando rapidamente
+o que há de novo neste backup.
+Salve com o padrão:
+
+
+cronus_MES_DIA_HORA.VERSAO.rar
+
+(O padrão pode mudar, é apenas um exemplo)
