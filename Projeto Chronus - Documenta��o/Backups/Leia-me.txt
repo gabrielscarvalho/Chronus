@@ -1,5 +1,0 @@
-Projeto: CRONOS
-Versão Atual: 0.1
-
-Definição da Versão Atual:
-Fase de Documentação
