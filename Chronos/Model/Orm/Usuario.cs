@@ -72,16 +72,46 @@ namespace Chronos.Model.Orm
             return this;
         }
 
-        /**
-         * Retorna o campo: email
+          /**
+         * Retorna o campo: sexo
          * @author      Gabriel Santos Carvalho
          * @version     1.0
          * @since       13/06/2012
          * @return      string
          */
-        public string getEmail()
+        public string getSexo()
         {
-            return this.getData("email","");
+            return this.getData("sexo","");
+        }
+
+        /**
+         * Seta o campo:sexo
+         * @author      Gabriel Santos Carvalho
+         * @version     1.0
+         * @since       13/06/2012
+         * @param       string email
+         * @return      Usuario
+         */
+        public Usuario setSexo(string sexo)
+        {
+            if (sexo == "M" || sexo == "F")
+            {
+                this.setData("sexo", sexo);
+                return this;
+            }
+            throw new Exception("O sexo "+sexo+" não esta mapeado.");
+        }
+
+        /**
+             * Retorna o campo: nascimento
+             * @author      Gabriel Santos Carvalho
+             * @version     1.0
+             * @since       13/06/2012
+             * @return      string
+             */
+        public string getDataNascimento()
+        {
+            return this.getData("nascimento", "");
         }
 
         /**
@@ -89,22 +119,22 @@ namespace Chronos.Model.Orm
          * @author      Gabriel Santos Carvalho
          * @version     1.0
          * @since       13/06/2012
-         * @param       string email
+         * @param       string dataNascimento
          * @return      Usuario
          */
-        public Usuario setEmail(string email)
+        public Usuario setDataNascimento(string dataNascimento)
         {
-            this.setData("email", email);
+            this.setData("nascimento", dataNascimento);
             return this;
         }
 
         /**
-         * Retorna o campo: status
-         * @author      Gabriel Santos Carvalho
-         * @version     1.0
-         * @since       13/06/2012
-         * @return      string
-         */
+           * Retorna o campo: status
+           * @author      Gabriel Santos Carvalho
+           * @version     1.0
+           * @since       13/06/2012
+           * @return      string
+           */
         public string getStatus()
         {
             return this.getData("status", "");
@@ -123,7 +153,35 @@ namespace Chronos.Model.Orm
             this.setData("status", status);
             return this;
         }
+        
 
+        /**
+               * Retorna o campo: email
+               * @author      Gabriel Santos Carvalho
+               * @version     1.0
+               * @since       13/06/2012
+               * @return      string
+               */
+        public string getEmail()
+        {
+            return this.getData("email", "");
+        }
+
+        /**
+         * Seta o campo:email
+         * @author      Gabriel Santos Carvalho
+         * @version     1.0
+         * @since       13/06/2012
+         * @param       string email
+         * @return      Usuario
+         */
+        public Usuario setEmail(string email)
+        {
+            this.setData("email", email);
+            return this;
+        }
+
+        
         /**
          * Retorna o campo: senha
          * @author      Gabriel Santos Carvalho
@@ -149,6 +207,87 @@ namespace Chronos.Model.Orm
             this.setData("senha", senha);
             return this;
         }
+
+        /**
+         * Retorna o campo: criado_em
+         * @author      Gabriel Santos Carvalho
+         * @version     1.0
+         * @since       13/06/2012
+         * @return      string
+         */
+        public string getCriadoEm()
+        {
+            return this.getData("criado_em", "");
+        }
+
+        /**
+         * Seta o campo: senha
+         * @author      Gabriel Santos Carvalho
+         * @version     1.0
+         * @since       13/06/2012
+         * @param       string criado_em
+         * @return      Usuario
+         */
+        public Usuario setCriadoEm(string criadoEm)
+        {
+            this.setData("criado_em", criadoEm);
+            return this;
+        }
+
+
+
+        /**
+         * Retorna o campo: alterado_em
+         * @author      Gabriel Santos Carvalho
+         * @version     1.0
+         * @since       13/06/2012
+         * @return      string
+         */
+        public string getAlteradoEm()
+        {
+            return this.getData("alterado_em", "");
+        }
+
+        /**
+         * Seta o campo: alterado_em
+         * @author      Gabriel Santos Carvalho
+         * @version     1.0
+         * @since       13/06/2012
+         * @param       string alteradoEm
+         * @return      Usuario
+         */
+        public Usuario setAlteradoEm(string alteradoEm)
+        {
+            this.setData("alterado_em", alteradoEm);
+            return this;
+        }
+
+        /**
+        * Retorna o campo: foto_perfil
+        * @author      Gabriel Santos Carvalho
+        * @version     1.0
+        * @since       13/06/2012
+        * @return      string
+        */
+        public string getFotoPerfil()
+        {
+            return this.getData("foto_perfil", "");
+        }
+
+        /**
+         * Seta o campo: foto_perfil
+         * @author      Gabriel Santos Carvalho
+         * @version     1.0
+         * @since       13/06/2012
+         * @param       string alteradoEm
+         * @return      Usuario
+         */
+        public Usuario setFotoPerfil(string fotoPerfil)
+        {
+            this.setData("foto_perfil", fotoPerfil);
+            return this;
+        }
+
 
         
 

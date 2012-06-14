@@ -51,23 +51,23 @@ namespace Chronos.Model.Orm
         public Core load(int id)
         {
             string sql = "SELECT * FROM "+this.tableName+" WHERE "+this.primaryKey+"="+id;
-            DataRow[] result = this.db.select(sql);
+            DataRow row = this.db.fetchRow(sql);
 
 
-            if (result.Length > 0)
+            if (row != null)
             {
                                
                 string[] columns = db.__getColumnsLastSelect();
 
                 this.columns = columns;
-                
-                DataRow row = result[0];
 
+                
                 foreach (string columnName in columns)
                 {
-                    this.setData(columnName, Convert.ToString(row[columnName]));
+                    this.setData(columnName,Convert.ToString(row[columnName]));
                 }
                 this.existsElement = true;
+                this.id = id;
             }
             else
             {
@@ -90,9 +90,34 @@ namespace Chronos.Model.Orm
 
         }
 
+        /**
+         * Retorna as colunas da tabela.
+         * @author      Gabriel Santos Carvalho
+         * @version     1.0
+         * @since       13/06/2012
+         * @return      array
+         */
+        public string[] getColumns()
+        {
+            if (this.columns.Length == 0)
+            {
+
+            }
+            return this.columns;
+
+
+        }
+
         public int save()
         {
-            this.id = this.db.insertCommand(this.getCollectedData(),this.tableName);
+            if (this.exists())
+            {
+                this.db.updateCommand(this.getCollectedData(), this.tableName, this.primaryKey + " = " + this.id);
+            }
+            else
+            {
+                this.id = this.db.insertCommand(this.getCollectedData(), this.tableName);
+            }
             return this.id;
         }
 

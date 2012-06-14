@@ -51,6 +51,10 @@ namespace Chronos.Model
          */
         public Data setData(string key, string value)
         {
+            if (this.hasData(key))
+            {
+                this.data.Remove(key);
+            }
             this.data.Add(key, value);
             return this;
         }

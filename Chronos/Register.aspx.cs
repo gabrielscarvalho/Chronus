@@ -14,20 +14,52 @@ namespace Chronos
     {
         protected void Page_Load(object sender, EventArgs e) {
 
-
+    
 
             Model.Orm.Usuario usuario = new Model.Orm.Usuario();
             usuario.load(5);
 
             if (usuario.exists())
             {
-                Console.WriteLine("O usuario: " + usuario.getNome() + " existe!! ");
+                 usuario.setNome("Joao Alterado");
+                 int id =  usuario.save();
             }
             else
             {
                 Console.WriteLine("Usuário não existe.");
             }
 
+           
+
+            
+
+            /*
+            
+            Model.Db db = new Model.Db();
+            Model.Data field = new Model.Data();
+
+            field.setData("nome", "Gabriel Alterado");
+            field.setData("sobrenome", "Silva");
+            field.setData("email", "josesilva@gmail.com");
+            field.setData("senha", "12342");
+
+            field.setData("status", "1");
+
+
+            string table = "usuario";
+
+            bool userId = db.updateCommand(field.getCollectedData(), table," id = 5");
+
+           
+            DataRow usuario = db.fetchRow("SELECT * FROM usuario;");
+
+            if (usuario != null)
+            {
+                string nome = Convert.ToString(usuario["nome"]);
+            }
+            
+
+            */
             //string table;
 
             /*
