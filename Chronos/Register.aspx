@@ -41,6 +41,18 @@
                   <asp:TextBox ID="txtEmail" placeholder="E-mail" runat="server" class="input-xlarge"></asp:TextBox>
                 </div>
              </div>
+              <div class="control-group">
+                <label for="txtEmail" class="control-label">&nbsp;Sexo:</label>
+                <div class="controls">
+                  <span class="add-on"><i class="icon-envelope"></i></span>
+                  </asp:TextBox>
+                    <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:ListItem Value="f">Feminino</asp:ListItem>
+                        <asp:ListItem Value="m">Masculino</asp:ListItem>
+                        <asp:ListItem Selected="True">Selecione</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+             </div>
              <div class="control-group">
                 <label for="txtEmail2" class="control-label">&nbsp;Repita o E-mail:</label>
                 <div class="controls">
