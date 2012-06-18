@@ -119,5 +119,37 @@ namespace Chronos
             */
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            DateTime data = Convert.ToDateTime(txtNascimento.Text);
+           
+
+            Model.Orm.Usuario apessoa = new Model.Orm.Usuario();
+
+            apessoa.setNome(txtNome.Text);
+            apessoa.setSobrenome(txtSobrenome.Text);
+            apessoa.setSexo(txtSexo.SelectedValue);
+            apessoa.setNascimento(data.Year+"-"+data.Month+"-"+data.Day);
+            apessoa.setEmail(txtEmail.Text);
+            apessoa.setSenha(txtPassword.Text);
+
+
+            apessoa.save();
+
+           
+
+
+            if (txtEmail.Text != txtEmail2.Text)
+                lblEmail.Text = "* Seu email não confere. Digite o email correto!";
+                lblEmail.Visible = true;
+                txtEmail2.Text = "";
+
+
+
+            if (txtPassword.Text != txtPassword2.Text)
+                lblSenha.Text = "* Sua senha não confere. Digite a senha correta!";
+                lblSenha.Visible = true;
+        }
+
     }
 }

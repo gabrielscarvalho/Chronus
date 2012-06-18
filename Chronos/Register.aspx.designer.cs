@@ -58,13 +58,13 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// txtSexo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList txtSexo;
         
         /// <summary>
         /// txtEmail2 control.
@@ -76,6 +76,15 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.TextBox txtEmail2;
         
         /// <summary>
+        /// lblEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEmail;
+        
+        /// <summary>
         /// txtNascimento control.
         /// </summary>
         /// <remarks>
@@ -85,22 +94,40 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.TextBox txtNascimento;
         
         /// <summary>
-        /// Password control.
+        /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
-        /// Password2 control.
+        /// txtPassword2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password2;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword2;
+        
+        /// <summary>
+        /// lblSenha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSenha;
+        
+        /// <summary>
+        /// cadastro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cadastro;
         
         /// <summary>
         /// View2 control.

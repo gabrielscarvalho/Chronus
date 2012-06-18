@@ -29,7 +29,7 @@ namespace Chronos.Model
         {
 
             
-            string strConn = "Persist Security Info=False; server="+this.server+";database="+this.dataBase+";uid="+this.username;
+            string strConn = "Persist Security Info=False; server="+this.server+";database="+this.dataBase+";uid="+this.username+";Allow Zero Datetime=true";
             //strConn = "Persist Security Info=False; server=localhost;database=teste;uid=root";
 
             MySqlConnection conn = new MySqlConnection(strConn);

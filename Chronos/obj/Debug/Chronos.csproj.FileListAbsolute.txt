@@ -30,3 +30,9 @@ K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\Chronos.pdb
 K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\bin\FirebirdSql.Data.FirebirdClient.pdb
 K:\Gabriel\Fatec\Projetos\Chronus\Chronos\Chronos\obj\Debug\Chronos.pdb
 C:\Users\Gabriel\Documents\Visual Studio 2010\Projects\Chronos\Chronos\bin\FirebirdSql.Data.FirebirdClient.pdb
+C:\Users\Ceci\Documents\Visual Studio 2010\Projects\Chronus\Chronos\bin\Chronos.dll
+C:\Users\Ceci\Documents\Visual Studio 2010\Projects\Chronus\Chronos\bin\Chronos.pdb
+C:\Users\Ceci\Documents\Visual Studio 2010\Projects\Chronus\Chronos\bin\FirebirdSql.Data.FirebirdClient.pdb
+C:\Users\Ceci\Documents\Visual Studio 2010\Projects\Chronus\Chronos\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ceci\Documents\Visual Studio 2010\Projects\Chronus\Chronos\obj\Debug\Chronos.dll
+C:\Users\Ceci\Documents\Visual Studio 2010\Projects\Chronus\Chronos\obj\Debug\Chronos.pdb
