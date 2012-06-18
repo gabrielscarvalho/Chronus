@@ -5,7 +5,7 @@
 	 using System.Web;
 	 namespace Chronos.Model.Orm
 	 {
-	 public class Usuario : Model.Orm.Core
+	 public class Administrador : Model.Orm.Core
 		 {
 
 		/**
@@ -14,8 +14,8 @@
 		 * @version	1.0
 		 * @since	14/06/2012
 		*/
-		public Usuario(){
-			this.tableName= "usuario";
+		public Administrador(){
+			this.tableName= "administrador";
 			this.primaryKey= "id";
 		}
 
@@ -36,9 +36,9 @@
 				* @version	1.0
 				* @param	string nome
 				* @since	14/06/2012
-				* @return	Usuario
+				* @return	Administrador
 			*/
-			public Usuario setNome(string nome){
+			public Administrador setNome(string nome){
 				 this.setData("nome",nome);
 				 return this;
 			}
@@ -60,58 +60,10 @@
 				* @version	1.0
 				* @param	string sobrenome
 				* @since	14/06/2012
-				* @return	Usuario
+				* @return	Administrador
 			*/
-			public Usuario setSobrenome(string sobrenome){
+			public Administrador setSobrenome(string sobrenome){
 				 this.setData("sobrenome",sobrenome);
-				 return this;
-			}
-
-			/**
-			 * Retorna o campo: sexo
-			 * @author	Gabriel
-			 * @version	1.0
-			 * @since	14/06/2012
-			 * @return	string
-			*/
-		public string getSexo(){
-			 return this.getData("sexo","");
-		}
-
-			/**
-				* Seta o campo: sexo
-				* @author	Gabriel
-				* @version	1.0
-				* @param	string sexo
-				* @since	14/06/2012
-				* @return	Usuario
-			*/
-			public Usuario setSexo(string sexo){
-				 this.setData("sexo",sexo);
-				 return this;
-			}
-
-			/**
-			 * Retorna o campo: nascimento
-			 * @author	Gabriel
-			 * @version	1.0
-			 * @since	14/06/2012
-			 * @return	string
-			*/
-		public string getNascimento(){
-			 return this.getData("nascimento","");
-		}
-
-			/**
-				* Seta o campo: nascimento
-				* @author	Gabriel
-				* @version	1.0
-				* @param	string nascimento
-				* @since	14/06/2012
-				* @return	Usuario
-			*/
-			public Usuario setNascimento(string nascimento){
-				 this.setData("nascimento",nascimento);
 				 return this;
 			}
 
@@ -132,58 +84,10 @@
 				* @version	1.0
 				* @param	string status
 				* @since	14/06/2012
-				* @return	Usuario
+				* @return	Administrador
 			*/
-			public Usuario setStatus(string status){
+			public Administrador setStatus(string status){
 				 this.setData("status",status);
-				 return this;
-			}
-
-			/**
-			 * Retorna o campo: email
-			 * @author	Gabriel
-			 * @version	1.0
-			 * @since	14/06/2012
-			 * @return	string
-			*/
-		public string getEmail(){
-			 return this.getData("email","");
-		}
-
-			/**
-				* Seta o campo: email
-				* @author	Gabriel
-				* @version	1.0
-				* @param	string email
-				* @since	14/06/2012
-				* @return	Usuario
-			*/
-			public Usuario setEmail(string email){
-				 this.setData("email",email);
-				 return this;
-			}
-
-			/**
-			 * Retorna o campo: senha
-			 * @author	Gabriel
-			 * @version	1.0
-			 * @since	14/06/2012
-			 * @return	string
-			*/
-		public string getSenha(){
-			 return this.getData("senha","");
-		}
-
-			/**
-				* Seta o campo: senha
-				* @author	Gabriel
-				* @version	1.0
-				* @param	string senha
-				* @since	14/06/2012
-				* @return	Usuario
-			*/
-			public Usuario setSenha(string senha){
-				 this.setData("senha",senha);
 				 return this;
 			}
 
@@ -204,9 +108,9 @@
 				* @version	1.0
 				* @param	string criadoEm
 				* @since	14/06/2012
-				* @return	Usuario
+				* @return	Administrador
 			*/
-			public Usuario setCriadoEm(string criadoEm){
+			public Administrador setCriadoEm(string criadoEm){
 				 this.setData("criado_em",criadoEm);
 				 return this;
 			}
@@ -228,34 +132,106 @@
 				* @version	1.0
 				* @param	string alteradoEm
 				* @since	14/06/2012
-				* @return	Usuario
+				* @return	Administrador
 			*/
-			public Usuario setAlteradoEm(string alteradoEm){
+			public Administrador setAlteradoEm(string alteradoEm){
 				 this.setData("alterado_em",alteradoEm);
 				 return this;
 			}
 
 			/**
-			 * Retorna o campo: foto_perfil
+			 * Retorna o campo: email
 			 * @author	Gabriel
 			 * @version	1.0
 			 * @since	14/06/2012
 			 * @return	string
 			*/
-		public string getFotoPerfil(){
-			 return this.getData("foto_perfil","");
+		public string getEmail(){
+			 return this.getData("email","");
 		}
 
 			/**
-				* Seta o campo: foto_perfil
+				* Seta o campo: email
 				* @author	Gabriel
 				* @version	1.0
-				* @param	string fotoPerfil
+				* @param	string email
 				* @since	14/06/2012
-				* @return	Usuario
+				* @return	Administrador
 			*/
-			public Usuario setFotoPerfil(string fotoPerfil){
-				 this.setData("foto_perfil",fotoPerfil);
+			public Administrador setEmail(string email){
+				 this.setData("email",email);
+				 return this;
+			}
+
+			/**
+			 * Retorna o campo: senha
+			 * @author	Gabriel
+			 * @version	1.0
+			 * @since	14/06/2012
+			 * @return	string
+			*/
+		public string getSenha(){
+			 return this.getData("senha","");
+		}
+
+			/**
+				* Seta o campo: senha
+				* @author	Gabriel
+				* @version	1.0
+				* @param	string senha
+				* @since	14/06/2012
+				* @return	Administrador
+			*/
+			public Administrador setSenha(string senha){
+				 this.setData("senha",senha);
+				 return this;
+			}
+
+			/**
+			 * Retorna o campo: sexo
+			 * @author	Gabriel
+			 * @version	1.0
+			 * @since	14/06/2012
+			 * @return	string
+			*/
+		public string getSexo(){
+			 return this.getData("sexo","");
+		}
+
+			/**
+				* Seta o campo: sexo
+				* @author	Gabriel
+				* @version	1.0
+				* @param	string sexo
+				* @since	14/06/2012
+				* @return	Administrador
+			*/
+			public Administrador setSexo(string sexo){
+				 this.setData("sexo",sexo);
+				 return this;
+			}
+
+			/**
+			 * Retorna o campo: nascimento
+			 * @author	Gabriel
+			 * @version	1.0
+			 * @since	14/06/2012
+			 * @return	string
+			*/
+		public string getNascimento(){
+			 return this.getData("nascimento","");
+		}
+
+			/**
+				* Seta o campo: nascimento
+				* @author	Gabriel
+				* @version	1.0
+				* @param	string nascimento
+				* @since	14/06/2012
+				* @return	Administrador
+			*/
+			public Administrador setNascimento(string nascimento){
+				 this.setData("nascimento",nascimento);
 				 return this;
 			}
 
