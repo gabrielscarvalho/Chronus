@@ -41,25 +41,25 @@
                   <asp:TextBox ID="txtEmail" placeholder="E-mail" runat="server" class="input-xlarge"></asp:TextBox>
                 </div>
              </div>
-              <div class="control-group">
-                <label for="txtEmail" class="control-label">&nbsp;Sexo:</label>
-                <div class="controls">
-                  <span class="add-on"><i class="icon-envelope"></i></span>
-                  </asp:TextBox>
-                    <asp:DropDownList ID="txtSexo" runat="server">
-                        <asp:ListItem Value="f">Feminino</asp:ListItem>
-                        <asp:ListItem Value="m">Masculino</asp:ListItem>
-                        <asp:ListItem Selected="True">Selecione</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-             </div>
-             <div class="control-group">
+            <div class="control-group">
                 <label for="txtEmail2" class="control-label">&nbsp;Repita o E-mail:</label>
                 <div class="controls">
                   <span class="add-on"><i class="icon-envelope"></i></span>
                   <asp:TextBox ID="txtEmail2" placeholder="E-mail" runat="server" class="input-xlarge"></asp:TextBox>
                     <br />
                     <asp:Label ID="lblEmail" runat="server" ForeColor="Red" Visible="False"></asp:Label>
+                </div>
+             </div>
+               <div class="control-group">
+                <label for="txtEmail" class="control-label">&nbsp;Sexo:</label>
+                <div class="controls">
+                  <span class="add-on"><i class="icon-envelope"></i></span>
+                  
+                    <asp:DropDownList ID="txtSexo" runat="server">
+                        <asp:ListItem Value="f">Feminino</asp:ListItem>
+                        <asp:ListItem Value="m">Masculino</asp:ListItem>
+                        <asp:ListItem Selected="True">Selecione</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
              </div>
              <div class="control-group">
@@ -84,14 +84,13 @@
                     <asp:Label ID="lblSenha" runat="server" ForeColor="Red" Visible="False"></asp:Label>
                 </div>
              </div>
-
-                 <p><a class="btn btn-primary btn-large">Registrar</a>
-                     <asp:Button ID="cadastro" runat="server" Text="Cadastrar" 
-                         CssClass="btn btn-primary btn-large" onclick="Button1_Click" />
-                 </p>
+                     <asp:Button ID="cadastro" runat="server" Text="Cadastrar" CssClass="btn btn-primary btn-large" onclick="Button1_Click" />
                  </div>
         </asp:View>
         <asp:View ID="View2" runat="server">
+            <div class="well">
+              <h2>Usuário salvo</h2>
+            </div>
         </asp:View>
     </asp:MultiView>
 

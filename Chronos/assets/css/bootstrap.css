@@ -4867,3 +4867,5 @@ a.badge:hover {
 .invisible {
   visibility: hidden;
 }
+
+.btn-primary, .btn-danger, .btn-success {    background-image: none;    filter: none;}

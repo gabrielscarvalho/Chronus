@@ -133,6 +133,7 @@
     <Content Include="Global.asax" />
     <Content Include="Goals.aspx" />
     <Content Include="GoalView.aspx" />
+    <Content Include="MinhaConta.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -201,6 +202,13 @@
     </Compile>
     <Compile Include="GoalView.aspx.designer.cs">
       <DependentUpon>GoalView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MinhaConta.aspx.cs">
+      <DependentUpon>MinhaConta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MinhaConta.aspx.designer.cs">
+      <DependentUpon>MinhaConta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\Data.cs" />
     <Compile Include="Model\Db.cs" />
