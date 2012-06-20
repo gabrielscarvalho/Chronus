@@ -36,17 +36,6 @@
                         </div>
                      </div>
 
-                     <div class="control-group">
-                        <label for="txtImagem" class="control-label">&nbsp;Imagem:</label>
-                        <div class="controls">
-                            <asp:FileUpload ID="uploadImagem" runat="server" /> 
-                            <asp:Button ID="upload" CssClass="btn-success" runat="server" Text="Upload" onclick="enviaImagem" />&nbsp;
-                            <asp:Label ID="saida" runat="server" Text=""></asp:Label>
-                            <br /><br />
-                            <img alt="" src="http://placehold.it/160x120">
-                        </div>
-                     </div>
-                
                      
                     <table class="table  table-striped">
                             <thead>
@@ -78,7 +67,8 @@
                                   </tr>
                             </tbody>
                   </table>
-                 <asp:Button class="btn btn-large btn-success" ID="addGoal" runat="server" Text="Criar Meta" />
+                 <asp:Button class="btn btn-large btn-success" ID="addGoal" runat="server" 
+                         Text="Criar Meta" onclick="addGoal_Click" />
              </div>
 </div>        
 </asp:Content>

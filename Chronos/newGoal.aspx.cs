@@ -17,9 +17,14 @@ namespace Chronos
         }
         protected void enviaImagem(object sender, EventArgs e)
         {
-            string caminho = "~/Image/Goal/";
-            Model.Imagem insere = new Model.Imagem();
-            insere.insert(uploadImagem, saida, caminho);
+        }
+
+        protected void addGoal_Click(object sender, EventArgs e)
+        {
+            Model.Orm.Objetivo objetivo = new Model.Orm.Objetivo();
+            //objetivo.setDescricao();
+            //objetivo.setTitulo();
+ 
         }
 
 

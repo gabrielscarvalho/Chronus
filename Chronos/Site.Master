@@ -6,7 +6,7 @@
     <title></title>
        <link href="~/assets/css/bootstrap.css" rel="stylesheet"/>
        <link href="~/assets/css/datepicker.css" rel="stylesheet"/>
-
+       <link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
     <style type="text/css">
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
