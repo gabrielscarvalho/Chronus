@@ -10,7 +10,7 @@
 namespace Chronos {
     
     
-    public partial class WebForm2 {
+    public partial class globalView {
         
         /// <summary>
         /// txtMeta control.

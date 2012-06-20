@@ -10,7 +10,7 @@
 namespace Chronos {
     
     
-    public partial class WebForm4 {
+    public partial class goals {
         
         /// <summary>
         /// txtTitulo control.

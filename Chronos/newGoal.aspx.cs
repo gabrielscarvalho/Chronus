@@ -22,9 +22,15 @@ namespace Chronos
         protected void addGoal_Click(object sender, EventArgs e)
         {
             Model.Orm.Objetivo objetivo = new Model.Orm.Objetivo();
-            //objetivo.setDescricao();
-            //objetivo.setTitulo();
- 
+            objetivo.setTitulo(txtTitulo.Text);
+            objetivo.setDescricao(txtDescricao.Text);
+            objetivo.setIniciadoEm(txtInicio.Text);
+            objetivo.save();
+
+            Model.Orm.Meta newGoal = new Model.Orm.Meta();
+            newGoal.setTitulo(txtMeta.Text);
+            newGoal.setFinalizarEm(txtDataPrevista.Text);
+            newGoal.save();
         }
 
 

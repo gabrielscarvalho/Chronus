@@ -42,7 +42,7 @@
               <div class="control-group">
                 <label for="txtEmail" class="control-label">Nome Fantasia:</label>
                 <div class="controls">
-                  <span class="add-on"></i></span>
+                  <span class="add-on"></span>
                   <asp:TextBox ID="txtFantasia" placeholder="Nome Fantasia" runat="server" 
                         class="input-xlarge" MaxLength="80"></asp:TextBox>
                     <br />
@@ -114,7 +114,7 @@
                      &nbsp;</p>
                  <p>
                      <asp:Button ID="registra" runat="server" class="btn btn-primary btn-large" 
-                         onclick="Button1_Click" Text="Button" />
+                         onclick="Button1_Click" Text="Cadastrar" />
                 </p>
                  <p>
                      &nbsp;</p>

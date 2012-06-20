@@ -10,7 +10,7 @@
 namespace Chronos {
     
     
-    public partial class WebForm3 {
+    public partial class minhaConta {
         
         /// <summary>
         /// lblUserName control.

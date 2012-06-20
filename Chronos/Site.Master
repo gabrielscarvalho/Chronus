@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
-    <title></title>
+    <title>| Chronus |</title>
        <link href="~/assets/css/bootstrap.css" rel="stylesheet"/>
        <link href="~/assets/css/datepicker.css" rel="stylesheet"/>
        <link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />
@@ -48,7 +48,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="Default.aspx">Chronus</a>
+          <a class="brand" href="Default.aspx"><img style="margim:0" src="assets/img/less-small.png" /></a>
 
         <div class="btn-group pull-right">
             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -105,8 +105,16 @@
         <div class="container-fluid">
     <div class="row-fluid">
     <div class="span2">
-        Menu Esquerdo.
-
+        <center>Anuncie Aqui!</center><br />
+       <a class="thumbnail" href="#">
+            <img alt="" src="http://placehold.it/260x180">
+       </a>
+       <a class="thumbnail" href="#">
+            <img alt="" src="http://placehold.it/260x180">
+       </a>
+       <a class="thumbnail" href="#">
+            <img alt="" src="http://placehold.it/260x180">
+       </a>
 
     </div>
     <div class="span10">

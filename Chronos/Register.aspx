@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Chronos.WebForm1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Chronos.register" %>
+<asp:Content ID="register" ContentPlaceHolderID="HeadContent" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {
             $('#MainContent_txtNascimento').datepicker({
@@ -53,7 +53,7 @@
                <div class="control-group">
                 <label for="txtEmail" class="control-label">&nbsp;Sexo:</label>
                 <div class="controls">
-                  <span class="add-on"><i class="icon-envelope"></i></span>
+                  <span class="add-on"></span>
                   
                     <asp:DropDownList ID="txtSexo" runat="server">
                         <asp:ListItem Value="f">Feminino</asp:ListItem>

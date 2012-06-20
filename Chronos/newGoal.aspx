@@ -62,7 +62,8 @@
                                    <tr>
                                         <td><span class="add-on"><i class="icon-th"></i></span></td>
                                         <td><asp:TextBox ID="txtMeta"  placeholder="Nova Meta" runat="server" class="input-xxlarge"></asp:TextBox></td>
-                                        <td> <asp:TextBox data-date-format="mm/dd/yy" placeholder="Data Finalizar" ID="TextBox1" runat="server" class="input-small calendar"></asp:TextBox></td>
+                                        <td> <asp:TextBox data-date-format="mm/dd/yy" placeholder="Data Finalizar" 
+                                                ID="txtDataPrevista" runat="server" class="input-small calendar"></asp:TextBox></td>
                                         <td>eu</td>
                                   </tr>
                             </tbody>

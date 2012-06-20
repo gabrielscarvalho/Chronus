@@ -10,7 +10,7 @@
 namespace Chronos {
     
     
-    public partial class WebForm1 {
+    public partial class register {
         
         /// <summary>
         /// RegisterMultiPanel control.
