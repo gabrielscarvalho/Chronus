@@ -15,8 +15,10 @@ namespace Chronos
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-        
-        
+
+            Model.Orm.Empresa empresa = new Model.Orm.Empresa();
+            empresa.setNome(txtRazao.Text);
+           
         }
 
         protected void txtNome_TextChanged(object sender, EventArgs e)

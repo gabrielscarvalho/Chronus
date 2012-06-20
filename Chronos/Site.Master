@@ -78,7 +78,22 @@
                       <li><a href="newGoal.aspx"><i class="icon-plus-sign"></i> Nova Meta</a></li>
                     </ul>
                   </li>
-                <li><a href="Register.aspx">Registre-se!</a></li>
+                  <li class="dropdown" id="Li1">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu2">
+                      Registre-se
+                      <b class="caret"></b>
+                    </a>
+                        <ul class="dropdown-menu">
+                      <li><a href="Register.aspx">Novo Usuário</a></li>
+                      <li><a href="RegisterEnterprise.aspx">Nova Empresa</a></li>
+                      
+                    </ul>
+                  </li>
+
+
+
+          
+                
             </ul>
             
           </div><!--/.nav-collapse -->

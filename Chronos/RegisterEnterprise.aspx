@@ -42,8 +42,8 @@
               <div class="control-group">
                 <label for="txtEmail" class="control-label">Nome Fantasia:</label>
                 <div class="controls">
-                  <span class="add-on"><i class="icon-envelope"></i></span>
-                  <asp:TextBox ID="txtFantasia" placeholder="E-mail" runat="server" 
+                  <span class="add-on"></i></span>
+                  <asp:TextBox ID="txtFantasia" placeholder="Nome Fantasia" runat="server" 
                         class="input-xlarge" MaxLength="80"></asp:TextBox>
                     <br />
                     <asp:Label ID="msgFantasia" runat="server" Font-Italic="False" Font-Size="Smaller" 
@@ -64,7 +64,8 @@
              <div class="control-group">
                 <label for="txtEmail2" class="control-label">&nbsp;Confirme o E-mail:</label>
                 <div class="controls">
-                  <asp:TextBox data-date-format="mm/dd/yy" placeholder="Data Nascimento" 
+                  <span class="add-on"><i class="icon-envelope"></i></span>
+                  <asp:TextBox data-date-format="mm/dd/yy" placeholder="E-mail" 
                         ID="txtNascimento" runat="server" class="input-medium" MaxLength="10"></asp:TextBox>
                     <br />
                     <asp:Label ID="msgEmail2" runat="server" Font-Italic="False" 
@@ -112,7 +113,7 @@
                  <p>
                      &nbsp;</p>
                  <p>
-                     <asp:Button ID="Button1" runat="server" class="btn btn-primary btn-large" 
+                     <asp:Button ID="registra" runat="server" class="btn btn-primary btn-large" 
                          onclick="Button1_Click" Text="Button" />
                 </p>
                  <p>
@@ -120,6 +121,7 @@
                  </div>
         </asp:View>
         <asp:View ID="View2" runat="server">
+            <br />
         </asp:View>
     </asp:MultiView>
 </p>
