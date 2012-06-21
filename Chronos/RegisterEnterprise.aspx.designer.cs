@@ -49,31 +49,13 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.Label msgRazao;
         
         /// <summary>
-        /// txtFantasia control.
+        /// txtEmail1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFantasia;
-        
-        /// <summary>
-        /// msgFantasia control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label msgFantasia;
-        
-        /// <summary>
-        /// txtEmail2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail2;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail1;
         
         /// <summary>
         /// msgEmail control.
@@ -85,13 +67,13 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.Label msgEmail;
         
         /// <summary>
-        /// txtNascimento control.
+        /// txtEmail2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNascimento;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail2;
         
         /// <summary>
         /// msgEmail2 control.
@@ -121,13 +103,13 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.Label msgSite;
         
         /// <summary>
-        /// Password control.
+        /// txtSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
+        protected global::System.Web.UI.WebControls.TextBox txtSenha;
         
         /// <summary>
         /// msgPassword control.
@@ -139,13 +121,13 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.Label msgPassword;
         
         /// <summary>
-        /// Password2 control.
+        /// txtSenha2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password2;
+        protected global::System.Web.UI.WebControls.TextBox txtSenha2;
         
         /// <summary>
         /// msgPassword2 control.

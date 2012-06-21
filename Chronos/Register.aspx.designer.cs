@@ -49,6 +49,24 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.TextBox txtSobrenome;
         
         /// <summary>
+        /// msgNome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msgNome;
+        
+        /// <summary>
+        /// msgSobrenome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msgSobrenome;
+        
+        /// <summary>
         /// txtEmail control.
         /// </summary>
         /// <remarks>
@@ -56,6 +74,15 @@ namespace Chronos {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// msgEmail1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msgEmail1;
         
         /// <summary>
         /// txtEmail2 control.
@@ -67,13 +94,13 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.TextBox txtEmail2;
         
         /// <summary>
-        /// lblEmail control.
+        /// msgEmail2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
+        protected global::System.Web.UI.WebControls.Label msgEmail2;
         
         /// <summary>
         /// txtSexo control.
@@ -85,6 +112,15 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.DropDownList txtSexo;
         
         /// <summary>
+        /// msgSexo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msgSexo;
+        
+        /// <summary>
         /// txtNascimento control.
         /// </summary>
         /// <remarks>
@@ -94,31 +130,49 @@ namespace Chronos {
         protected global::System.Web.UI.WebControls.TextBox txtNascimento;
         
         /// <summary>
-        /// txtPassword control.
+        /// msgNascimento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.Label msgNascimento;
         
         /// <summary>
-        /// txtPassword2 control.
+        /// txtSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword2;
+        protected global::System.Web.UI.WebControls.TextBox txtSenha;
         
         /// <summary>
-        /// lblSenha control.
+        /// msgSenha1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSenha;
+        protected global::System.Web.UI.WebControls.Label msgSenha1;
+        
+        /// <summary>
+        /// txtSenha2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSenha2;
+        
+        /// <summary>
+        /// msgSenha2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label msgSenha2;
         
         /// <summary>
         /// cadastro control.
